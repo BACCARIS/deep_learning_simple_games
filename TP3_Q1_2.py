@@ -1,4 +1,4 @@
-# TESTING DROPOUR IMPORTANCE
+# TESTING NORMALAZATION WITH DROPOUT's IMPORTANCE
 
 import keras
 from keras import backend as K
@@ -19,21 +19,7 @@ import matplotlib.pyplot as plt
 # to import minst data 
 from keras.datasets import mnist
 
-###############################################################################################
-# Reminder of the network used in TP2, to compare with cnn_keras_model() (code below)		  #
-def reseau_TP2_model():																	      #		
-	# create model 																			  #	
-	model = Sequential()																	  #
-	model.add(Dense(num_pixels, activation='relu', input_shape=(num_pixels,)))				  #	
-	model.add(Dense(100, activation='relu'))												  #
-	model.add(Dense(num_classes, activation='softmax'))										  #
-	# compile model  																		  #	
-	model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])    #
-	return model                                                                              #
-###############################################################################################
-
-
-# Reseau convolution simple, sur 12 epoques 
+# Reseau convolution simple 
 def cnn_keras_model():
 	model = Sequential()
 	# 32, 3x3 convolution filters
@@ -97,10 +83,6 @@ scores = model.evaluate(X_test, y_test, verbose=0)
 # check precision
 print('---->Accuracy: {}% \n---->Error: {}'.format(scores[1], 1 - scores[1]))
 
-# CNN WITH KERAS ---->Accuracy: 0.9932%  &  ---->Error: 0.006800000000000028
-# PERCEPTRON MULTI-COUCHES DU TP 2 : ---->Accuracy: 0.9802%  &  ---->Error: 0.0198
-# On remarque vriament la difference avec le cnn qui a une erreur quasi nulle
-
 # PLOTTING TRAINING EVOLUTION
 xvals = range(12)		# 12 data points (because we do 12 epoques)
 plt.clf()				# Clear figure
@@ -109,4 +91,8 @@ plt.plot(xvals, hist.history["acc"], label = "Traning accuracy")
 plt.plot(xvals, hist.history["val_acc"], label = "Validation accuracy")
 plt.legend() # display legend
 plt.show() # show the figure
+
+# output
+#	---->Accuracy: 0.9876%		& 		---->Error: 0.012399999999999967
+# On remaruqe une grande difference par rapport a la premier partie ou on fesait la normalisation
 

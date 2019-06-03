@@ -1,0 +1,27 @@
+Question 1.1 : voir TP3_Q1_1.py
+	On remarque bien la difference entre l'utilisation d'un reseau de neurones multi couches non convolutionnel et avec convolution.
+	Le deuxuème avait une precision beaucoup plus importante, avec un taux d'erreur quasi nulle.
+
+	Les resultats que j'ai obtenu:
+	Pour celui du TP2 (sans convolution):
+		---->Accuracy: 0.9802%  &  ---->Error: 0.0198
+	Avec convolution:
+		---->Accuracy: 0.9932%  &  ---->Error: 0.006800000000000028
+
+Question 1.2 : voir TP3_Q1_2.py
+	On remarque qu'enlevé la normalisation de dropout a augmenter l'erreur ( et donc la precision du cnn a diminuer)
+	---->Accuracy: 0.9876%		& 		---->Error: 0.012399999999999967
+	Le graph aussi montre une grande difference (diffaince) dans l'evolution de l'entrainment
+	Ou on voit clairmeent qu'au lieu de s'approcher de la data d'entraianmnet
+
+
+Question 2.1 : voir TP3_Q2_1.py
+				Vous trouverez un dosseir qui s'appelle "image", dans lesquel j'ai mis 18 images de renard (juste pour pouvoir tester rapidement chez vous)
+				Aussi il y a un script python qui automatise le téléchargement d'environ 900 photos de renard a partir du site fourni dans l'enoncee
+				Le reseau vgg16 arrive a bien reconnaitre l'animal, output :
+				Predicted [('n02119789', 'kit_fox', 0.34652036), ('n01877812', 'wallaby', 0.17589845), ('n02120505', 'grey_fox', 0.13314462)]
+				qui est en effet la bonne en regardant le fichier Labels ILSVRC.txt
+
+Question 2.2 : voit TP3_Q2_2.py
+				Mon commentaires sont dans le code
+
